@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mustache</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="/lib/mustache.js"></script>
+  <script>
+    const data = {
+      arr: [
+        {name: '小明', age: 18, sex: '男'},
+        {name: '小红', age: 14, sex: '女'},
+        {name: '小白', age: 16, sex: '男'},
+      ]
+    }
+
+    const templateStr = `
+      <ul>
+        {{#arr}}
+          <li>
+            <div class="hd">{{name}}的基本信息</div>
+            <div class="bd">
+              <p>姓名：{{name}}</p>
+              <p>年龄：{{age}}</p>
+              <p>性别：{{sex}}</p>
+            </div>
+          </li>  
+        {{/arr}}
+      </ul>
+    `
+
+    const domStr = Mustache.render(templateStr, data)
+
+    document.querySelector('#app').innerHTML = domStr
+  </script>
+</body>
+</html>

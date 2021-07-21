@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join</title>
+</head>
+<body>
+  <ul id="list">
+    <!-- 期待得到的 DOM -->
+    <!-- <li>
+      <div class="hd">小明的基本信息</div>
+      <div class="bd">
+        <p>姓名：小明</p>
+        <p>年龄：18</p>
+        <p>性别：男</p>
+      </div>
+    </li> -->
+  </ul>
+
+  <script>
+    const arr = [
+      {name: '小明', age: 18, sex: '男'},
+      {name: '小红', age: 14, sex: '女'},
+      {name: '小白', age: 16, sex: '男'},
+    ]
+
+    const list = document.getElementById('list')
+
+    for(let i = 0; i < arr.length; i++) {
+      list.innerHTML += [
+      '<li>',
+      '  <div class="hd">' + arr[i].name + '的基本信息</div>',
+      '  <div class="bd">',
+      '    <p>姓名：' + arr[i].name + '</p>',
+      '    <p>年龄：' + arr[i].age + '</p>',
+      '    <p>性别：' + arr[i].sex + '</p>',
+      '  </div>',
+      '</li>'
+      ].join('')
+    }
+
+
+  </script>
+</body>
+</html>
